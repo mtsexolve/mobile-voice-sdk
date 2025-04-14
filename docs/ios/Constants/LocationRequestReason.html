@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>AudioRoute Constants Reference</title>
+	<title>LocationRequestReason Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,7 +59,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">AudioRoute Constants Reference</h1>
+					<h1 class="title">LocationRequestReason Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -75,11 +75,11 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">AudioRoute</h3>
+                    <h3 class="subsubtitle method-title">LocationRequestReason</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Audiosession route</p>
+                        <p>The reason for the location request</p>
 					</div>
 					
 					
@@ -87,17 +87,25 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, AudioRoute ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, LocationRequestReason ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Unknown</a>,<br>
+                            &nbsp;&nbsp; <a href="">LR_OutgoingCall</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Earpiece</a>,<br>
+                            &nbsp;&nbsp; <a href="">LR_IncomingCall</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Speaker</a>,<br>
+                            &nbsp;&nbsp; <a href="">LR_AcceptCall</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Headset</a>,<br>
+                            &nbsp;&nbsp; <a href="">LR_ResumeCall</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Bluetooth</a>,<br>
+                            &nbsp;&nbsp; <a href="">LR_CreateConferenceCall</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">LR_UpdateCallConnection</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">LR_NewAccountActivation</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">LR_UpdateAccountActivation</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">LR_OtherReason</a>,<br>
                             
                             };</code>
                     
@@ -107,11 +115,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="AR_Unknown"></a><code>AR_Unknown</code></dt>
+                            <dt><a name="" title="LR_OutgoingCall"></a><code>LR_OutgoingCall</code></dt>
 <dd>
 
 
-<p>Unknown</p>
+<p>Initiating an outgoing call</p>
 
 
 
@@ -124,11 +132,11 @@
 	
 </dd>
                             
-                            <dt><a name="" title="AR_Earpiece"></a><code>AR_Earpiece</code></dt>
+                            <dt><a name="" title="LR_IncomingCall"></a><code>LR_IncomingCall</code></dt>
 <dd>
 
 
-<p>Earpiece</p>
+<p>Receiving an incoming call</p>
 
 
 
@@ -141,11 +149,11 @@
 	
 </dd>
                             
-                            <dt><a name="" title="AR_Speaker"></a><code>AR_Speaker</code></dt>
+                            <dt><a name="" title="LR_AcceptCall"></a><code>LR_AcceptCall</code></dt>
 <dd>
 
 
-<p>Speaker</p>
+<p>Accepting an incoming call</p>
 
 
 
@@ -158,11 +166,11 @@
 	
 </dd>
                             
-                            <dt><a name="" title="AR_Headset"></a><code>AR_Headset</code></dt>
+                            <dt><a name="" title="LR_ResumeCall"></a><code>LR_ResumeCall</code></dt>
 <dd>
 
 
-<p>Headset</p>
+<p>Resuming a call</p>
 
 
 
@@ -175,11 +183,79 @@
 	
 </dd>
                             
-                            <dt><a name="" title="AR_Bluetooth"></a><code>AR_Bluetooth</code></dt>
+                            <dt><a name="" title="LR_CreateConferenceCall"></a><code>LR_CreateConferenceCall</code></dt>
 <dd>
 
 
-<p>Bluetooth</p>
+<p>Creating a conference call</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">SdkTypes.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="LR_UpdateCallConnection"></a><code>LR_UpdateCallConnection</code></dt>
+<dd>
+
+
+<p>Updating calls connection</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">SdkTypes.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="LR_NewAccountActivation"></a><code>LR_NewAccountActivation</code></dt>
+<dd>
+
+
+<p>Activating new account</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">SdkTypes.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="LR_UpdateAccountActivation"></a><code>LR_UpdateAccountActivation</code></dt>
+<dd>
+
+
+<p>Updating the account&rsquo;s activation</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">SdkTypes.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="LR_OtherReason"></a><code>LR_OtherReason</code></dt>
+<dd>
+
+
+<p>Some other reason</p>
 
 
 
