@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LocationRequesterDelegate Protocol Reference</title>
+	<title>AudioRouteData Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -54,15 +54,19 @@
 
 	
 	
-
-	
-
-	
-	<optgroup label="Instance Methods">
+	<optgroup label="Properties">
 		
-		<option value="//api/name/locationRequest:acceptHandler:cancelHandler:">- locationRequest:acceptHandler:cancelHandler:</option>
+		<option value="//api/name/isActive">isActive</option>
+		
+		<option value="//api/name/name">name</option>
+		
+		<option value="//api/name/route">route</option>
 		
 	</optgroup>
+	
+
+	
+
 	
 	
 </select>
@@ -77,13 +81,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LocationRequesterDelegate Protocol Reference</h1>
+					<h1 class="title">AudioRouteData Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
 	<th>Declared in</th>
-	<td>LocationRequesterDelegate.h</td>
+	<td>AudioRouteData.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -93,7 +100,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The location requester interface</p>
+						<p>Audio <a href="#//api/name/route">route</a> description</p>
 					</div>
 					
 					
@@ -109,9 +116,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/locationRequest:acceptHandler:cancelHandler:" title="locationRequest:acceptHandler:cancelHandler:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/locationRequest:acceptHandler:cancelHandler:">&ndash;&nbsp;locationRequest:acceptHandler:cancelHandler:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/route" title="route"></a>
+	<h3 class="method-title"><code><a href="#//api/name/route">&nbsp;&nbsp;route</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -120,36 +127,14 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Location request for the account&rsquo;s activation or calls actions</p>
+				<p>Type of audio route</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)locationRequest:(LocationRequestReason)<em>reason</em> acceptHandler:(nonnull void ( ^ ) ( CLLocation *_Nullable ))<em>acceptHandler</em> cancelHandler:(nonnull void ( ^ ) ( ))<em>cancelHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) AudioRoute route</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>reason</code></th>
-						<td><p>the location request reason</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>acceptHandler</code></th>
-						<td><p>accept requested location callback handler</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>cancelHandler</code></th>
-						<td><p>cancel requested location callback handler</p></td>
-					</tr>
-				
-				</table>
-			</div>
 			
 
 			
@@ -165,7 +150,89 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LocationRequesterDelegate.h</code></p>
+				<p><code class="declared-in-ref">AudioRouteData.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Human readable name of <a href="#//api/name/route">route</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy, readonly, nonnull) NSString *name</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AudioRouteData.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isActive" title="isActive"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isActive">&nbsp;&nbsp;isActive</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Is this <a href="#//api/name/route">route</a> active or not</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly) bool isActive</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AudioRouteData.h</code></p>
 			</div>
 			
 			

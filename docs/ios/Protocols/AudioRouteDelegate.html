@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LocationRequesterDelegate Protocol Reference</title>
+	<title>AudioRouteDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -60,7 +60,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/locationRequest:acceptHandler:cancelHandler:">- locationRequest:acceptHandler:cancelHandler:</option>
+		<option value="//api/name/routeChanged:">- routeChanged:</option>
 		
 	</optgroup>
 	
@@ -77,13 +77,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">LocationRequesterDelegate Protocol Reference</h1>
+					<h1 class="title">AudioRouteDelegate Protocol Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>LocationRequesterDelegate.h</td>
+	<td>AudioRouteDelegate.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -93,7 +93,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The location requester interface</p>
+						<p>Track  the active and available routes</p>
 					</div>
 					
 					
@@ -109,8 +109,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/locationRequest:acceptHandler:cancelHandler:" title="locationRequest:acceptHandler:cancelHandler:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/locationRequest:acceptHandler:cancelHandler:">&ndash;&nbsp;locationRequest:acceptHandler:cancelHandler:</a></code>
+	<a name="//api/name/routeChanged:" title="routeChanged:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/routeChanged:">&ndash;&nbsp;routeChanged:</a></code>
 <span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
@@ -120,12 +120,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Location request for the account&rsquo;s activation or calls actions</p>
+				<p>Audio routes changed</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)locationRequest:(LocationRequestReason)<em>reason</em> acceptHandler:(nonnull void ( ^ ) ( CLLocation *_Nullable ))<em>acceptHandler</em> cancelHandler:(nonnull void ( ^ ) ( ))<em>cancelHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)routeChanged:(nonnull NSArray&lt;AudioRouteData*&gt; *)<em>routes</em></code></div>
 
 		    
 			
@@ -134,18 +134,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>reason</code></th>
-						<td><p>the location request reason</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>acceptHandler</code></th>
-						<td><p>accept requested location callback handler</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>cancelHandler</code></th>
-						<td><p>cancel requested location callback handler</p></td>
+						<th scope="row" class="argument-name"><code>routes</code></th>
+						<td><p>available routes</p></td>
 					</tr>
 				
 				</table>
@@ -165,7 +155,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">LocationRequesterDelegate.h</code></p>
+				<p><code class="declared-in-ref">AudioRouteDelegate.h</code></p>
 			</div>
 			
 			

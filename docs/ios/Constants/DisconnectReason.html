@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>AudioRoute Constants Reference</title>
+	<title>DisconnectReason Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,7 +59,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">AudioRoute Constants Reference</h1>
+					<h1 class="title">DisconnectReason Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -75,11 +75,11 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">AudioRoute</h3>
+                    <h3 class="subsubtitle method-title">DisconnectReason</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Audiosession route</p>
+                        <p>The reasons for a disconnection of a call.</p>
 					</div>
 					
 					
@@ -87,17 +87,15 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, AudioRoute ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, DisconnectReason ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Unknown</a>,<br>
+                            &nbsp;&nbsp; <a href="">DR_EndedByUser</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Earpiece</a>,<br>
+                            &nbsp;&nbsp; <a href="">DR_EndedByPeer</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Speaker</a>,<br>
+                            &nbsp;&nbsp; <a href="">DR_RejectedElsewhere</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">AR_Headset</a>,<br>
-                            
-                            &nbsp;&nbsp; <a href="">AR_Bluetooth</a>,<br>
+                            &nbsp;&nbsp; <a href="">DR_AnsweredElsewhere</a>,<br>
                             
                             };</code>
                     
@@ -107,11 +105,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="AR_Unknown"></a><code>AR_Unknown</code></dt>
+                            <dt><a name="" title="DR_EndedByUser"></a><code>DR_EndedByUser</code></dt>
 <dd>
 
 
-<p>Unknown</p>
+<p>The call was ended by the local party.</p>
 
 
 
@@ -124,11 +122,11 @@
 	
 </dd>
                             
-                            <dt><a name="" title="AR_Earpiece"></a><code>AR_Earpiece</code></dt>
+                            <dt><a name="" title="DR_EndedByPeer"></a><code>DR_EndedByPeer</code></dt>
 <dd>
 
 
-<p>Earpiece</p>
+<p>The call was ended by the remote party.</p>
 
 
 
@@ -141,11 +139,11 @@
 	
 </dd>
                             
-                            <dt><a name="" title="AR_Speaker"></a><code>AR_Speaker</code></dt>
+                            <dt><a name="" title="DR_RejectedElsewhere"></a><code>DR_RejectedElsewhere</code></dt>
 <dd>
 
 
-<p>Speaker</p>
+<p>The call was rejected on another device registered with the same credentials.</p>
 
 
 
@@ -158,28 +156,11 @@
 	
 </dd>
                             
-                            <dt><a name="" title="AR_Headset"></a><code>AR_Headset</code></dt>
+                            <dt><a name="" title="DR_AnsweredElsewhere"></a><code>DR_AnsweredElsewhere</code></dt>
 <dd>
 
 
-<p>Headset</p>
-
-
-
-
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">SdkTypes.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="AR_Bluetooth"></a><code>AR_Bluetooth</code></dt>
-<dd>
-
-
-<p>Bluetooth</p>
+<p>The call was accepted on another device registered with the same credentials.</p>
 
 
 
