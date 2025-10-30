@@ -58,13 +58,13 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/communicatorForOutgoingCalls:">+ communicatorForOutgoingCalls:</option>
-		
-		<option value="//api/name/communicatorForOutgoingCalls:environment:">+ communicatorForOutgoingCalls:environment:</option>
-		
 		<option value="//api/name/communicatorWithConfiguration:">+ communicatorWithConfiguration:</option>
 		
 		<option value="//api/name/communicatorWithConfiguration:environment:">+ communicatorWithConfiguration:environment:</option>
+		
+		<option value="//api/name/communicatorWithConfiguration:registrationMode:">+ communicatorWithConfiguration:registrationMode:</option>
+		
+		<option value="//api/name/communicatorWithConfiguration:registrationMode:environment:">+ communicatorWithConfiguration:registrationMode:environment:</option>
 		
 		<option value="//api/name/instance">+ instance</option>
 		
@@ -118,7 +118,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>SDK&rsquo;s configuration and initialization</p>
+						<p>SDK&rsquo;s configuration and initialization.</p>
 					</div>
 					
 					
@@ -145,7 +145,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Communicator instance created earlier</p>
+				<p>Communicator instance created earlier.</p>
 			</div>
 			
 		    
@@ -160,7 +160,7 @@
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
 				<p>the Communicator instance</p>
 
-<p>Will throw an exception if the instance has not been initialized</p>
+<p>Will throw an exception if the instance has not been initialized.</p>
 			</div>
 			
 
@@ -193,7 +193,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates Communicator <a href="#//api/name/instance">instance</a> with provided configuration</p>
+				<p>Creates Communicator <a href="#//api/name/instance">instance</a> with provided configuration and default registration mode (RM_WhenActive).</p>
 			</div>
 			
 		    
@@ -240,6 +240,69 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/communicatorWithConfiguration:registrationMode:" title="communicatorWithConfiguration:registrationMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/communicatorWithConfiguration:registrationMode:">+&nbsp;communicatorWithConfiguration:registrationMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates Communicator <a href="#//api/name/instance">instance</a> with provided configuration.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull Communicator *)communicatorWithConfiguration:(nonnull Configuration *)<em>configuration</em> registrationMode:(RegistrationMode)<em>registrationMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configuration</code></th>
+						<td><p>SDK configuration</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>registrationMode</code></th>
+						<td><p>registration mode</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Communicator singleton <a href="#//api/name/instance">instance</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Communicator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/communicatorWithConfiguration:environment:" title="communicatorWithConfiguration:environment:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/communicatorWithConfiguration:environment:">+&nbsp;communicatorWithConfiguration:environment:</a></code>
 </h3>
@@ -251,7 +314,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates Communicator <a href="#//api/name/instance">instance</a> with provided configuration</p>
+				<p>Creates Communicator <a href="#//api/name/instance">instance</a> with provided configuration and default registration mode (RM_WhenActive).</p>
 			</div>
 			
 		    
@@ -303,8 +366,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/communicatorForOutgoingCalls:" title="communicatorForOutgoingCalls:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/communicatorForOutgoingCalls:">+&nbsp;communicatorForOutgoingCalls:</a></code>
+	<a name="//api/name/communicatorWithConfiguration:registrationMode:environment:" title="communicatorWithConfiguration:registrationMode:environment:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/communicatorWithConfiguration:registrationMode:environment:">+&nbsp;communicatorWithConfiguration:registrationMode:environment:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -314,14 +377,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates Communicator <a href="#//api/name/instance">instance</a> configured to allow only outgoing calls.
-Irrelevant configuration options will be ignored.
-After account activation client will be in Offline state.</p>
+				<p>Creates Communicator <a href="#//api/name/instance">instance</a> with provided configuration and registration mode.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (nonnull Communicator *)communicatorForOutgoingCalls:(nonnull Configuration *)<em>configuration</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull Communicator *)communicatorWithConfiguration:(nonnull Configuration *)<em>configuration</em> registrationMode:(RegistrationMode)<em>registrationMode</em> environment:(nullable NSString *)<em>environment</em></code></div>
 
 		    
 			
@@ -334,64 +395,9 @@ After account activation client will be in Offline state.</p>
 						<td><p>SDK configuration</p></td>
 					</tr>
 				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Communicator singleton <a href="#//api/name/instance">instance</a></p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">Communicator.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/communicatorForOutgoingCalls:environment:" title="communicatorForOutgoingCalls:environment:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/communicatorForOutgoingCalls:environment:">+&nbsp;communicatorForOutgoingCalls:environment:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Creates Communicator <a href="#//api/name/instance">instance</a> configured to allow only outgoing calls.
-Irrelevant configuration options will be ignored.
-After account activation client will be in Offline state.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (nonnull Communicator *)communicatorForOutgoingCalls:(nonnull Configuration *)<em>configuration</em> environment:(nullable NSString *)<em>environment</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
 					<tr>
-						<th scope="row" class="argument-name"><code>configuration</code></th>
-						<td><p>SDK configuration</p></td>
+						<th scope="row" class="argument-name"><code>registrationMode</code></th>
+						<td><p>registration mode</p></td>
 					</tr>
 				
 					<tr>
@@ -439,7 +445,7 @@ After account activation client will be in Offline state.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Get SDK version info</p>
+				<p>Get SDK version info.</p>
 			</div>
 			
 		    
@@ -480,7 +486,7 @@ After account activation client will be in Offline state.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p><a href="../Classes/Call.html">Call</a> client <a href="#//api/name/instance">instance</a></p>
+				<p><a href="../Classes/Call.html">Call</a> client <a href="#//api/name/instance">instance</a>.</p>
 			</div>
 			
 		    
@@ -526,7 +532,7 @@ After account activation client will be in Offline state.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p><a href="../Classes/Configuration.html">Configuration</a> manager <a href="#//api/name/instance">instance</a></p>
+				<p><a href="../Classes/Configuration.html">Configuration</a> manager <a href="#//api/name/instance">instance</a>.</p>
 			</div>
 			
 		    
@@ -572,7 +578,7 @@ After account activation client will be in Offline state.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Callback to obtain a VOIP push token in the application</p>
+				<p>Callback to obtain a VoIP push token in the application.</p>
 			</div>
 			
 		    
@@ -587,7 +593,7 @@ After account activation client will be in Offline state.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completionHandler</code></th>
-						<td><p>a block with a NSString parameter in which the application will receive a VOIP push token</p></td>
+						<td><p>a block with a NSString parameter in which the application will receive a VoIP push token</p></td>
 					</tr>
 				
 				</table>
@@ -625,7 +631,7 @@ After account activation client will be in Offline state.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Add Callback to obtain a VOIP push notification in the application</p>
+				<p>Add Callback to obtain a VoIP push notification in the application.</p>
 			</div>
 			
 		    
@@ -640,7 +646,7 @@ After account activation client will be in Offline state.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>notificationReceivedHandler</code></th>
-						<td><p>a block with a NSString parameter in which the application will receive a VOIP push notification</p></td>
+						<td><p>a block with a NSString parameter in which the application will receive a VoIP push notification</p></td>
 					</tr>
 				
 				</table>
@@ -681,7 +687,7 @@ After account activation client will be in Offline state.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2025 MTT. All rights reserved. Updated: 2025-10-13</p>
+						<p class="copyright">Copyright &copy; 2025 MTT. All rights reserved. Updated: 2025-10-30</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>DtmfMode Constants Reference</title>
+	<title>RegistrationMode Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,7 +59,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">DtmfMode Constants Reference</h1>
+					<h1 class="title">RegistrationMode Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -75,11 +75,11 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">DtmfMode</h3>
+                    <h3 class="subsubtitle method-title">RegistrationMode</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>DTMF mode</p>
+                        <p>Registration mode controls how SIP registration is performed.</p>
 					</div>
 					
 					
@@ -87,13 +87,11 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, DtmfMode ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, RegistrationMode ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">DM_Auto</a>,<br>
+                            &nbsp;&nbsp; <a href="">RM_WhenActive</a> = 1,<br>
                             
-                            &nbsp;&nbsp; <a href="">DM_Sip</a>,<br>
-                            
-                            &nbsp;&nbsp; <a href="">DM_Rtp</a>,<br>
+                            &nbsp;&nbsp; <a href="">RM_OnlyForCalls</a> = 2,<br>
                             
                             };</code>
                     
@@ -103,11 +101,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="DM_Auto"></a><code>DM_Auto</code></dt>
+                            <dt><a name="" title="RM_WhenActive"></a><code>RM_WhenActive</code></dt>
 <dd>
 
 
-<p>Auto</p>
+<p>Register when the app is active or push notification has been received.</p>
 
 
 
@@ -120,28 +118,11 @@
 	
 </dd>
                             
-                            <dt><a name="" title="DM_Sip"></a><code>DM_Sip</code></dt>
+                            <dt><a name="" title="RM_OnlyForCalls"></a><code>RM_OnlyForCalls</code></dt>
 <dd>
 
 
-<p>Sip</p>
-
-
-
-
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">SdkTypes.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="DM_Rtp"></a><code>DM_Rtp</code></dt>
-<dd>
-
-
-<p>Rtp</p>
+<p>Register only on a call push notification or before starting an outgoing call. Go offline when there are no active calls.</p>
 
 
 
