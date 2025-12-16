@@ -60,6 +60,8 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/clearAccount">- clearAccount</option>
+		
 		<option value="//api/name/getCallById:">- getCallById:</option>
 		
 		<option value="//api/name/getCallByNumber:">- getCallByNumber:</option>
@@ -72,9 +74,9 @@
 		
 		<option value="//api/name/placeCall:withContext:">- placeCall:withContext:</option>
 		
-		<option value="//api/name/registerUser:password:">- registerUser:password:</option>
-		
 		<option value="//api/name/registrationState">- registrationState</option>
+		
+		<option value="//api/name/setAccountUser:password:">- setAccountUser:password:</option>
 		
 		<option value="//api/name/setAudioRoute:">- setAudioRoute:</option>
 		
@@ -89,8 +91,6 @@
 		<option value="//api/name/setRegistrationDelegate:withQueue:">- setRegistrationDelegate:withQueue:</option>
 		
 		<option value="//api/name/setSpeakerOn:">- setSpeakerOn:</option>
-		
-		<option value="//api/name/unregister">- unregister</option>
 		
 	</optgroup>
 	
@@ -126,7 +126,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Account registration and calls management</p>
+						<p>Account registration and calls management.</p>
 					</div>
 					
 					
@@ -153,7 +153,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Account register/<a href="#//api/name/unregister">unregister</a> while keeping current account</p>
+				<p>Account register/unregister while keeping current account.</p>
 			</div>
 			
 		    
@@ -168,7 +168,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>offline</code></th>
-						<td><p>YES to register, NO to <a href="#//api/name/unregister">unregister</a></p></td>
+						<td><p>YES to register, NO to unregister</p></td>
 					</tr>
 				
 				</table>
@@ -206,7 +206,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Current account registration state</p>
+				<p>Current account registration state.</p>
 			</div>
 			
 		    
@@ -267,7 +267,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>number</code></th>
-						<td><p>Account number.</p></td>
+						<td><p>Account number</p></td>
 					</tr>
 				
 				</table>
@@ -320,7 +320,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>number</code></th>
-						<td><p>Account number.</p></td>
+						<td><p>Account number</p></td>
 					</tr>
 				
 					<tr>
@@ -365,7 +365,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Get call by number</p>
+				<p>Get call by number.</p>
 			</div>
 			
 		    
@@ -423,7 +423,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Get call by identifier</p>
+				<p>Get call by identifier.</p>
 			</div>
 			
 		    
@@ -481,7 +481,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Current calls list</p>
+				<p>Current calls list.</p>
 			</div>
 			
 		    
@@ -516,8 +516,8 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/registerUser:password:" title="registerUser:password:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/registerUser:password:">&ndash;&nbsp;registerUser:password:</a></code>
+	<a name="//api/name/setAccountUser:password:" title="setAccountUser:password:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAccountUser:password:">&ndash;&nbsp;setAccountUser:password:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -527,12 +527,12 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Create new account registration and make this account current</p>
+				<p>Set SIP credentials, establish registration if suitable <a href="../Constants/RegistrationMode.html">RegistrationMode</a> is selected.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)registerUser:(nonnull NSString *)<em>user</em> password:(nonnull NSString *)<em>password</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setAccountUser:(nonnull NSString *)<em>user</em> password:(nonnull NSString *)<em>password</em></code></div>
 
 		    
 			
@@ -574,8 +574,8 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/unregister" title="unregister"></a>
-	<h3 class="method-title"><code><a href="#//api/name/unregister">&ndash;&nbsp;unregister</a></code>
+	<a name="//api/name/clearAccount" title="clearAccount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearAccount">&ndash;&nbsp;clearAccount</a></code>
 </h3>
 
 	<div class="method-info">
@@ -585,12 +585,12 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Remove account registration</p>
+				<p>Unregister account and clear credentials.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)unregister</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)clearAccount</code></div>
 
 		    
 			
@@ -626,7 +626,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Enables/disables routing voice to speaker for calls</p>
+				<p>Enables/disables routing voice to speaker for calls.</p>
 			</div>
 			
 		    
@@ -679,7 +679,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Speaker&rsquo;s current routing state for calls</p>
+				<p>Speaker&rsquo;s current routing state for calls.</p>
 			</div>
 			
 		    
@@ -725,7 +725,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Activate audio route</p>
+				<p>Activate audio route.</p>
 			</div>
 			
 		    
@@ -778,7 +778,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set audio routes delegate to track routes availability</p>
+				<p>Set audio routes delegate to track routes availability.</p>
 			</div>
 			
 		    
@@ -831,7 +831,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set account registration delegate</p>
+				<p>Set account registration delegate.</p>
 			</div>
 			
 		    
@@ -889,7 +889,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set calls delegate for detecting new and updated calls</p>
+				<p>Set calls delegate for detecting new and updated calls.</p>
 			</div>
 			
 		    
@@ -947,7 +947,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set the call&rsquo;s location requester delegate</p>
+				<p>Set the call&rsquo;s location requester delegate.</p>
 			</div>
 			
 		    
@@ -1008,7 +1008,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2025 MTT. All rights reserved. Updated: 2025-11-26</p>
+						<p class="copyright">Copyright &copy; 2025 MTT. All rights reserved. Updated: 2025-12-16</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
