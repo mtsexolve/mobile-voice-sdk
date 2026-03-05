@@ -72,9 +72,23 @@
 		
 		<option value="//api/name/placeCall:">- placeCall:</option>
 		
+		<option value="//api/name/placeCall:asUser:withPassword:">- placeCall:asUser:withPassword:</option>
+		
 		<option value="//api/name/placeCall:withContext:">- placeCall:withContext:</option>
 		
+		<option value="//api/name/placeCall:withContext:asUser:withPassword:">- placeCall:withContext:asUser:withPassword:</option>
+		
 		<option value="//api/name/registrationState">- registrationState</option>
+		
+		<option value="//api/name/removeAudioRouteDelegate">- removeAudioRouteDelegate</option>
+		
+		<option value="//api/name/removeCallsDelegate">- removeCallsDelegate</option>
+		
+		<option value="//api/name/removeCredentialsRequesterDelegate">- removeCredentialsRequesterDelegate</option>
+		
+		<option value="//api/name/removeLocationRequesterDelegate">- removeLocationRequesterDelegate</option>
+		
+		<option value="//api/name/removeRegistrationDelegate">- removeRegistrationDelegate</option>
 		
 		<option value="//api/name/setAccountUser:password:">- setAccountUser:password:</option>
 		
@@ -84,9 +98,9 @@
 		
 		<option value="//api/name/setCallsDelegate:withQueue:">- setCallsDelegate:withQueue:</option>
 		
-		<option value="//api/name/setLocationRequesterDelegate:withQueue:">- setLocationRequesterDelegate:withQueue:</option>
+		<option value="//api/name/setCredentialsRequesterDelegate:withQueue:">- setCredentialsRequesterDelegate:withQueue:</option>
 		
-		<option value="//api/name/setOffline:">- setOffline:</option>
+		<option value="//api/name/setLocationRequesterDelegate:withQueue:">- setLocationRequesterDelegate:withQueue:</option>
 		
 		<option value="//api/name/setRegistrationDelegate:withQueue:">- setRegistrationDelegate:withQueue:</option>
 		
@@ -142,59 +156,6 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/setOffline:" title="setOffline:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setOffline:">&ndash;&nbsp;setOffline:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Account register/unregister while keeping current account.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setOffline:(BOOL)<em>offline</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>offline</code></th>
-						<td><p>YES to register, NO to unregister</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CallClient.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/registrationState" title="registrationState"></a>
 	<h3 class="method-title"><code><a href="#//api/name/registrationState">&ndash;&nbsp;registrationState</a></code>
 </h3>
@@ -252,7 +213,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Create new outgoing call to the specified account number.</p>
+				<p>Create a new outgoing call to the specified account number.</p>
 			</div>
 			
 		    
@@ -305,7 +266,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Create new outgoing call to the specified account number.</p>
+				<p>Create a new outgoing call to the specified account number.</p>
 			</div>
 			
 		    
@@ -328,6 +289,141 @@
 						<td><p>Not empty string value (size up to 64 bytes) to be included in the call request.
 The SDK retrieves this value on the recipient&rsquo;s side.
 Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CallClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/placeCall:asUser:withPassword:" title="placeCall:asUser:withPassword:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/placeCall:asUser:withPassword:">&ndash;&nbsp;placeCall:asUser:withPassword:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new outgoing call to the specified account number using provided credentials.<br>
+Only applicable in RM_PerCallCredentials registration mode.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)placeCall:(nonnull NSString *)<em>number</em> asUser:(nonnull NSString *)<em>user</em> withPassword:(nonnull NSString *)<em>password</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>number</code></th>
+						<td><p>target phone or SIP account number</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>user</code></th>
+						<td><p>SIP user</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>password</code></th>
+						<td><p>SIP password</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CallClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/placeCall:withContext:asUser:withPassword:" title="placeCall:withContext:asUser:withPassword:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/placeCall:withContext:asUser:withPassword:">&ndash;&nbsp;placeCall:withContext:asUser:withPassword:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a new outgoing call to the specified account number passing string context using provided credentials.<br>
+Only applicable in RM_PerCallCredentials registration mode.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)placeCall:(nonnull NSString *)<em>number</em> withContext:(nonnull NSString *)<em>extraContext</em> asUser:(nonnull NSString *)<em>user</em> withPassword:(nonnull NSString *)<em>password</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>number</code></th>
+						<td><p>target phone or SIP account number</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>extraContext</code></th>
+						<td><p>Not empty string value (size up to 64 bytes) to be included in the call request.
+The SDK retrieves this value on the recipient&rsquo;s side.
+Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>user</code></th>
+						<td><p>SIP user</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>password</code></th>
+						<td><p>SIP password</p></td>
 					</tr>
 				
 				</table>
@@ -820,6 +916,47 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/removeAudioRouteDelegate" title="removeAudioRouteDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAudioRouteDelegate">&ndash;&nbsp;removeAudioRouteDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove audio routes delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAudioRouteDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CallClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/setRegistrationDelegate:withQueue:" title="setRegistrationDelegate:withQueue:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/setRegistrationDelegate:withQueue:">&ndash;&nbsp;setRegistrationDelegate:withQueue:</a></code>
 </h3>
@@ -856,6 +993,47 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 				
 				</table>
 			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CallClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeRegistrationDelegate" title="removeRegistrationDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeRegistrationDelegate">&ndash;&nbsp;removeRegistrationDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove account registration delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeRegistrationDelegate</code></div>
+
+		    
 			
 
 			
@@ -936,6 +1114,47 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/removeCallsDelegate" title="removeCallsDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCallsDelegate">&ndash;&nbsp;removeCallsDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove calls delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCallsDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CallClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/setLocationRequesterDelegate:withQueue:" title="setLocationRequesterDelegate:withQueue:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/setLocationRequesterDelegate:withQueue:">&ndash;&nbsp;setLocationRequesterDelegate:withQueue:</a></code>
 </h3>
@@ -993,6 +1212,146 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeLocationRequesterDelegate" title="removeLocationRequesterDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeLocationRequesterDelegate">&ndash;&nbsp;removeLocationRequesterDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the call&rsquo;s location requester delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeLocationRequesterDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CallClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCredentialsRequesterDelegate:withQueue:" title="setCredentialsRequesterDelegate:withQueue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCredentialsRequesterDelegate:withQueue:">&ndash;&nbsp;setCredentialsRequesterDelegate:withQueue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the delegate for providing credentials for RM_PerCallCredentials registration mode.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCredentialsRequesterDelegate:(nonnull id&lt;CredentialsRequesterDelegate&gt;)<em>delegate</em> withQueue:(nonnull dispatch_queue_t)<em>queue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>the delegate instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>queue</code></th>
+						<td><p>queue where delegate will be submitted</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CallClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCredentialsRequesterDelegate" title="removeCredentialsRequesterDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCredentialsRequesterDelegate">&ndash;&nbsp;removeCredentialsRequesterDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the credentials requester delegate.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCredentialsRequesterDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CallClient.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1008,7 +1367,7 @@ Only applicable to SIP-to-SIP calls within the Exolve platform.</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2025 MTT. All rights reserved. Updated: 2025-12-16</p>
+						<p class="copyright">Copyright &copy; 2026 MTT. All rights reserved. Updated: 2026-03-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
